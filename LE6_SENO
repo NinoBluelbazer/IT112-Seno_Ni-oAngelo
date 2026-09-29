@@ -22,8 +22,8 @@ int main() {
   int choice;
 
   do {
-    printf("Multiple functions to perform Arithmetic Operations\n\n");
-
+    printf("Multiple functions to perform Arithmetic Operations\n");
+    printf("\n");
     printf("Enter first number: ");
     scanf("%f", &num1);
 
