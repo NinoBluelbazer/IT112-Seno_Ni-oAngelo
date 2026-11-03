@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main()
+{
+    char name[50];
+    char age[10];
+    char course[50];
+    int students, i;
+    FILE *file;
+
+    printf("===== STUDENT RECORD =====\n");
+
+    printf("Enter number of students: ");
+    scanf("%d", &students);
+    getchar();
+
+    for(i = 1; i <= students; i++)
+    {
+        printf("\nStudent %d\n", i);
+
+        printf("Name: ");
+        fgets(name, 50, stdin);
+
+        printf("Age: ");
+        fgets(age, 10, stdin);
+
+        printf("Course: ");
+        fgets(course, 50, stdin);
+
+        file = fopen("student_records.txt", "a");
+
+        fprintf(file, "\nStudent %d\n", i);
+        fprintf(file, "Name: %s", name);
+        fprintf(file, "Age: %s", age);
+        fprintf(file, "Course: %s", course);
+
+        fclose(file);
+    }
+
+    printf("\nStudent records saved!\n");
+
+    return 0;
+}
